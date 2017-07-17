@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Scenes/From Home/From Restaurant/Register/Side Orders.unity
+  isLoaded: 1
+  isActive: 1
