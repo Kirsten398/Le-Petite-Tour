@@ -65,12 +65,12 @@ public class hunting : MonoBehaviour {
         }
     }
 
-    public void QuickHunt(string s)
+    /*public void QuickHunt(string s)
     {
         master.MasterAdd(s);
 
         Application.LoadLevel("Home");
-    }
+    }*/
 
     public bool DetermineEncounter()
     {

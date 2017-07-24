@@ -42,7 +42,7 @@ public class masterList : MonoBehaviour {
         }
         else
         {
-            item newItem = new item();
+            item newItem;
 
             newItem.setName(n);
             newItem.setQuantity(q);

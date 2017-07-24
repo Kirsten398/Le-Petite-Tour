@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class item {
+public class item : MonoBehaviour {
 
     string itemName;
     int quantity;
