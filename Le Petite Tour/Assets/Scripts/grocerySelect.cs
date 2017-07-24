@@ -37,8 +37,6 @@ public class grocerySelect : MonoBehaviour {
 
         if (date.Hour == 8)
             Fen.gameObject.SetActive(true);
-
-        Debug.Log(date);
     }
 
     public void SelectGroceries(string s)
@@ -112,9 +110,10 @@ public class grocerySelect : MonoBehaviour {
 
     public void Delivery()
     {
-        foreach(string item in Groceries)
+        foreach(string ingredient in Groceries)
         {
-            master.MasterAdd(item);   
+            if(ingredient == "Chicken")
+                master.AddItem(ingredient, 5, 1, 5);   
         }
 
         for(int i = 0; i < Groceries.Length; i++)

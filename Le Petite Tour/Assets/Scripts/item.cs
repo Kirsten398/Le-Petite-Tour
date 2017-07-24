@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class item : MonoBehaviour {
+public class item {
 
-    string name;
+    string itemName;
+    int quantity;
     int price;
     int exp;
 
@@ -20,7 +21,12 @@ public class item : MonoBehaviour {
 
     public string getName()
     {
-        return name;
+        return itemName;
+    }
+
+    public void setName(string s)
+    {
+        itemName = s;
     }
 
     public int getPrice()
@@ -28,8 +34,28 @@ public class item : MonoBehaviour {
         return price;
     }
 
+    public int getQuantity()
+    {
+        return quantity;
+    }
+
+    public void setQuantity(int q)
+    {
+        quantity = q;
+    }
+
+    public void setPrice(int p)
+    {
+        price = p;
+    }
+
     public int getExp()
     {
         return exp;
+    }
+
+    public void setExp(int e)
+    {
+        exp = e;
     }
 }

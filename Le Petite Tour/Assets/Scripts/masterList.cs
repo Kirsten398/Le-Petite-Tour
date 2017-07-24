@@ -6,122 +6,69 @@ using UnityEngine.UI;
 public class masterList : MonoBehaviour {
 
     public static List<string> Master = new List<string>();
-    public static List<string> Recipe = new List<string>();
+    public static List<item> ItemMaster = new List<item>();
 
-    public GameObject baseButton;
-    public GameObject page1, page2, page3, page4, page5, page6, page7, page8;
-    public GameObject left;
-    public GameObject right;
-
-    private int[] pageCap = { 24, 49, 74, 99, 124, 149, 174, 199};
-    private List<GameObject> slots = new List<GameObject>();
-    private int itemCount = 0;
-    private int page;
-    private int last;
-    private bool onStartScreen = false;
-    private bool onLastScreen = false;
+    private bool updateItem = false;
 
     // Use this for initialization
     void Start() {
-        onStartScreen = true;
-        page = 0;
-        last = 2;
 
-        /*for (int x = 0; x < 25; x++)
-        {
-            Master.Add("CK");
-        }
-
-        foreach (string item in Master)
-        {
-            if (itemCount < 25)
-            {
-                slots.Add(Instantiate(baseButton, new Vector3(itemCount % 5 * 125 - 200, -itemCount / 5 * 125 + 800), Quaternion.identity, page1.transform));
-                slots[itemCount].GetComponentInChildren<Text>().text = Master[itemCount];
-                itemCount++;
-            }
-        }*/
     }
 
     // Update is called once per frame
     void Update() {
-        //UpdatePantry();
 
-        /*if (onLastScreen)
-            right.SetActive(false);
-        else right.SetActive(true);
+    }
 
-        if (page == 0)
-            onStartScreen = true;
+    public void AddItem(string n, int q, int p, int e)
+    {
+        int i;
 
-        if (page == last)
-            onLastScreen = true;
-
-        if (page != last)
-            onLastScreen = false;
-
-        if (page != 0)
-            onStartScreen = false;
-
-        if (itemCount < 25 && onStartScreen)
+        for (i = 0; i < ItemMaster.Count && ItemMaster[i].getName() != n; i++)
         {
-            left.SetActive(false);
-            right.SetActive(false);
+            if (ItemMaster[i].getName() != n)
+                updateItem = false;
+            else
+                updateItem = true;
+        }
+
+        if (updateItem)
+        {
+            int quantity = ItemMaster[i].getQuantity();
+
+            quantity += q;
+
+            ItemMaster[i].setQuantity(quantity);
         }
         else
         {
-            right.SetActive(true);
-        }
+            item newItem = new item();
 
-        if(itemCount > 25 && !onStartScreen)
-        {
-            left.SetActive(true);
-        }*/
+            newItem.setName(n);
+            newItem.setQuantity(q);
+            newItem.setPrice(p);
+            newItem.setExp(e);
 
-    }
-
-    //populate pantry pages
-    void UpdatePantry()
-    {
-        foreach (string item in Master)
-        {
-            if (itemCount < 25)
-            {
-                slots.Add(Instantiate(baseButton, new Vector3(itemCount % 5 * 125 - 200, -itemCount / 5 * 125 + 800), Quaternion.identity, page1.transform));
-                slots[itemCount].GetComponentInChildren<Text>().text = Master[itemCount];
-                itemCount++;
-            }
+            ItemMaster.Add(newItem);
         }
     }
 
-    public void MasterAdd(string s)
+    public int FindIngredientQuantity(string name)
     {
-        Master.Add(s);
-    }
+        int i;
+        bool found = false;
 
-    public void PageInc()
-    {
-        page++;
-    }
-    
-    public void PageDec()
-    {
-        page--;
-    }
+        for(i = 0; i < ItemMaster.Count && ItemMaster[i].getName() != name; i++)
+        {
+            if (ItemMaster[i].getName() != name)
+                found = false;
+            else
+                found = true;
+        }
 
-    public void Unlock(GameObject g)
-    {
-        g.SetActive(true);
-        last++;
-    }
-
-    public void FinalUnlock(GameObject g)
-    {
-        g.SetActive(true);
-    }
-
-    public void killButton(GameObject b)
-    {
-        Destroy(b);
+        if (found)
+            return ItemMaster[i].getQuantity();
+        else
+            return 0;
     }
 }
