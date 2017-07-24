@@ -13,7 +13,7 @@ public class sink : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(ingredientList.FindIngredientQuantity("Water"));
+
 	}
 
     public void AddWater()

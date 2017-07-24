@@ -92,7 +92,6 @@
     <Compile Include="Assets\Scripts\masterList.cs" />
     <Compile Include="Assets\Scripts\menuController.cs" />
     <Compile Include="Assets\Scripts\pantryStatus.cs" />
-    <Compile Include="Assets\Scripts\recipe.cs" />
     <Compile Include="Assets\Scripts\sink.cs" />
     <Compile Include="Assets\unity-ui-extensions\Examples\testHref.cs" />
     <Compile Include="Assets\unity-ui-extensions\Examples\UIVerticalScrollerDemo\Scripts\ScrollingCalendar.cs" />

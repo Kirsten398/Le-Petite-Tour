@@ -34,6 +34,8 @@ public class cooking : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        ingredientList.AddItem("Chicken", 5, 1, 1);
+
         chickenHave = ingredientList.FindIngredientQuantity("Chicken");
         waterHave = ingredientList.FindIngredientQuantity("Water");
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class item : MonoBehaviour {
+public class item {
 
     string itemName;
     int quantity;
@@ -18,6 +18,14 @@ public class item : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public item(string n, int q, int p, int e)
+    {
+        itemName = n;
+        quantity = q;
+        price = p;
+        exp = e;
+    }
 
     public string getName()
     {
