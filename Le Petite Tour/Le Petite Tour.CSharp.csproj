@@ -82,6 +82,8 @@
     <Compile Include="Assets\Scripts\clock.cs" />
     <Compile Include="Assets\Scripts\cooking.cs" />
     <Compile Include="Assets\Scripts\dove.cs" />
+    <Compile Include="Assets\Scripts\experimentalScripts\Ingredient.cs" />
+    <Compile Include="Assets\Scripts\experimentalScripts\PantryExp.cs" />
     <Compile Include="Assets\Scripts\grocer.cs" />
     <Compile Include="Assets\Scripts\grocerySelect.cs" />
     <Compile Include="Assets\Scripts\homeMenus.cs" />

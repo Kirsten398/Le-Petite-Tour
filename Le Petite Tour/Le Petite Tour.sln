@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Le Petite Tour.CSharp", "Le Petite Tour.CSharp.csproj", "{87C92CAE-451A-0416-16B8-52E825E4C01A}"
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Le Petite Tour", "Le Petite Tour.csproj", "{21335895-67DC-137A-67BD-978F39AF76DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Le Petite Tour.CSharp.Editor", "Le Petite Tour.CSharp.Editor.csproj", "{B369F733-24BD-E1CD-D38E-C7B4A3476320}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Le Petite Tour.Editor", "Le Petite Tour.Editor.csproj", "{884BB001-D976-97A8-FE1D-2B0CBC5574B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{87C92CAE-451A-0416-16B8-52E825E4C01A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{87C92CAE-451A-0416-16B8-52E825E4C01A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{87C92CAE-451A-0416-16B8-52E825E4C01A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{87C92CAE-451A-0416-16B8-52E825E4C01A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B369F733-24BD-E1CD-D38E-C7B4A3476320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B369F733-24BD-E1CD-D38E-C7B4A3476320}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B369F733-24BD-E1CD-D38E-C7B4A3476320}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B369F733-24BD-E1CD-D38E-C7B4A3476320}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21335895-67DC-137A-67BD-978F39AF76DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21335895-67DC-137A-67BD-978F39AF76DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21335895-67DC-137A-67BD-978F39AF76DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21335895-67DC-137A-67BD-978F39AF76DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{884BB001-D976-97A8-FE1D-2B0CBC5574B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{884BB001-D976-97A8-FE1D-2B0CBC5574B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{884BB001-D976-97A8-FE1D-2B0CBC5574B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{884BB001-D976-97A8-FE1D-2B0CBC5574B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
