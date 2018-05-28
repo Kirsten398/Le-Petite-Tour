@@ -20,6 +20,7 @@ public class grocerySelect : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        master = masterList.master;
         delivery.gameObject.SetActive(false);
     }
 

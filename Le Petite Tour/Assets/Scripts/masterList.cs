@@ -5,14 +5,31 @@ using UnityEngine.UI;
 
 public class masterList : MonoBehaviour {
 
-    public static List<string> Master = new List<string>();
-    public static List<item> ItemMaster = new List<item>();
+    private static masterList Master = null;
+    private Dictionary<string, item> ItemMaster;
 
-    private bool updateItem = false;
+    public static masterList master
+    {
+        get
+        {
+            if (Master == null)
+            {
+                Debug.Log("Master is null");
+                Master = GameObject.Find("Master").GetComponent<masterList>();
+                if (Master == null)
+                {
+                    Debug.Log("Master is null");
+                }
+            }
+            return Master;
+        }
+    }
 
     // Use this for initialization
     void Start() {
-
+        Debug.Log("Start Master List");
+        ItemMaster = new Dictionary<string, item>();
+        Master = this;
     }
 
     // Update is called once per frame
@@ -22,56 +39,32 @@ public class masterList : MonoBehaviour {
 
     public void AddItem(string n, int q, int p, int e)
     {
-        int i;
-
-        //this does not seem to be working
-        for (i = 0; i < ItemMaster.Count && ItemMaster[i].getName() != n; i++)
+        item item;
+        if (ItemMaster.TryGetValue(n, out item))
         {
-            if (ItemMaster[i].getName() != n)
-                updateItem = false;
-            else
-                updateItem = true;
-        }
-
-        if (updateItem)
-        {
-            Debug.Log("Updating Item " + ItemMaster[i].getName());
-
-            int quantity = ItemMaster[i].getQuantity();
+            int quantity = item.getQuantity();
 
             quantity += q;
 
-            ItemMaster[i].setQuantity(quantity);
+            item.setQuantity(quantity);
+
+            Debug.Log("Updating Item " + item.getName() + " " + quantity);
         }
-        else
-        {
-            Debug.Log("Adding Item " + n);
-
-            item newItem = new item(n, q, p, e);
-            ItemMaster.Add(newItem);
-
-            CheckList();
+        else {
+            item = new item(n, q, p, e);
+            ItemMaster.Add(n, item);
+            Debug.Log("Adding Item " + item.getName() + " " + q);
         }
     }
 
     public int FindIngredientQuantity(string name)
     {
-        int i;
-        bool found = false;
+        item item;
 
-        //nor this
-        for(i = 0; i < ItemMaster.Count && ItemMaster[i].getName() != name; i++)
+        if (ItemMaster.TryGetValue(name, out item))
         {
-            if (ItemMaster[i].getName() != name)
-                found = false;
-            else
-                found = true;
-        }
-
-        if (found)
-        {
-            Debug.Log("Found Item " + ItemMaster[i].getName());
-            return ItemMaster[i].getQuantity();
+            Debug.Log("Found Item " + item.getName());
+            return item.getQuantity();
         }
         else
         {
@@ -82,9 +75,9 @@ public class masterList : MonoBehaviour {
 
     public void CheckList()
     {
-        foreach(item ingredient in ItemMaster)
+        foreach(KeyValuePair<string, item> pair in ItemMaster)
         {
-            Debug.Log(ingredient.getName());
+            Debug.Log(pair.Key);
         }
     }
 }
