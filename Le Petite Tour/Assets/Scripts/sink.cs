@@ -8,7 +8,7 @@ public class sink : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        ingredientList = masterList.master;
 	}
 	
 	// Update is called once per frame

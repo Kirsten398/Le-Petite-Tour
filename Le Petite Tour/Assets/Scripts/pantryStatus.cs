@@ -22,6 +22,7 @@ public class pantryStatus : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Master = masterList.master;
         onStartScreen = true;
         page = 0;
         last = 2;

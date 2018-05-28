@@ -19,6 +19,7 @@ public class hunting : MonoBehaviour {
     
     // Use this for initialization
 	void Start () {
+        master = masterList.master;
         Texts[0].gameObject.SetActive(true);
         Texts[1].gameObject.SetActive(false);
         Texts[2].gameObject.SetActive(false);
